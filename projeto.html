@@ -1,275 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Solar System</title>
-<link rel=stylesheet href="styl.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema Solar</title>
 <style>
-  body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-    overflow: hidden;
-}
-.container {
-    font-size: 6px;
-    width: 40em;
-    height: 40em;
+  #sol {
+    background-color: yellow;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
     position: relative;
-}
-img{
-    height: 130%;
-    width: 130%;
-}
-.sun {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 15em;
-    left: 15em;
-    width: 10em;
-    height: 10em;
-    border-radius: 50%;
-    box-shadow: 0 0 3em rgb(255, 128, 0);
-    animation: orbit 50s linear infinite;
-}
-.mercury,
-.venus,
-.earth,
-.moon,
-.mars,
-.jupiter,
-.saturn,
-.uranus,
-.neptune,
-.pluto {
-    position: absolute;
-    border-style: solid;
-    border-color: white transparent transparent transparent;
-    border-width: 0.1em 0.1em 0 0;
-    border-radius: 50%;
-}
-.mercury {
-    top: 12.5em;
-    left: 12.5em;
-    width: 15em;
-    height: 15em;
-    animation: orbit 68.7s linear infinite;
-}
-
-.venus {
-    top: 10em;
-    left: 10em;
-    width: 20em;
-    height: 20em;
-    animation: orbit 48.7s linear infinite;
-}
-
-.earth {
-    top: 6em;
-    left: 6em;
-    width: 28em;
-    height: 28em; 
-    animation: orbit 36.5s linear infinite;   
-}
-.moon {
-    top: 2em;
-    right: -1em;
-    width: 7em;
-    height: 7em; 
-    animation: orbit 2.7s linear infinite;
-}
-.mars {
-    top: 2em;
-    left: 2.5em;
-    width: 36em;
-    height: 36em; 
-    animation: orbit 26.5s linear infinite;
-}
-.jupiter {
-    top: -2em;
-    left: -2em;
-    width: 45em;
-    height: 45em; 
-    animation: orbit 21s linear infinite;
-}
-.saturn {
-    top: -7em;
-    left: -7em;
-    width: 55em;
-    height: 55em; 
-    animation: orbit 17s linear infinite;
-}
-.uranus {
-    top: -12em;
-    left: -12em;
-    width: 65em;
-    height: 65em; 
-    animation: orbit 19s linear infinite;
-}
-.neptune {
-    top: -17em;
-    left: -17em;
-    width: 75em;
-    height: 75em; 
-    animation: orbit 15s linear infinite;
-}
-.pluto {
-    top: -22em;
-    left: -22em;
-    width: 85em;
-    height: 85em; 
-    animation: orbit 18s linear infinite;
-}
-
-.mercury::before,
-.venus::before,
-.earth::before,
-.moon::before,
-.mars::before,
-.jupiter::before,
-.saturn::before,
-.uranus::before,
-.neptune::before,
-.pluto::before{
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    animation: orbit 30s linear infinite;
-}
-.mercury::before {
-    top: 1.5em;
-    right: 0.8em;
-    width: 2em;
-    height: 2em;
-    background-image: url('./images (1) (6).jpeg');
-    background-size: cover;
-}
-.venus::before {
-    top: 2em;
-    right: 2em;
-    width: 2em;
-    height: 2em;
-    background-image: url('./images (1) (5).jpeg');
-    background-size: cover;
-}
-.earth::before {
-    top: 3em;
-    right: 0em;
-    width: 5em;
-    height: 5em;
-    background-image: url('./images (1) (13).jpeg');
-    background-size: cover;
-}
-
-.moon::before {
-    top: 0.8em;
-    right: 0.2em;
-    width: 1.2em;
-    height: 1.2em;
-    background-image: url('./images (1) (9).jpeg');
-    background-size: cover;
-}
-.mars::before {
-    top: 5em;
-    right: 3em;
-    width: 3em;
-    height: 3em;
-    background-image: url('./OSIRIS_Mars_true_color.jpg');
-    background-size: cover;
-}
-.jupiter::before {
-    top: 6em;
-    right: 3em;
-    width: 5em;
-    height: 5em;
-    background-image: url('./Jupiter_and_its_shrunken_Great_Red_Spot.jpg');
-    background-size: cover;
-}
-.saturn::before {
-    top: 7.5em;
-    right: 5em;
-    width: 4.5em;
-    height: 4.5em;
-    background-image: url('./Saturn_during_Equinox.jpg');
-    background-size: cover;
-}
-.uranus::before {
-    top: 9em;
-    right: 6.5em;
-    width: 4em;
-    height: 4em;
-    background-image: url('./images (1) (7).jpeg');
-    background-size: cover;
-}
-.neptune::before {
-    top: 10em;
-    right: 8em;
-    width: 4em;
-    height: 4em;
-    background-image: url('./images (1) (12).jpeg');
-    background-size: cover;
-}
-.pluto::before {
-    top: 11em;
-    right: 10em;
-    width: 4em;
-    height: 4em;
-    background-image: url('./images (1) (14).jpeg');
-    background-size: cover;
-}
-
-.star {
-    position: absolute;
-    background-color: white;
-    border-radius: 50%;
-    z-index: -1;
-}
-
-@keyframes orbit {
-    to {
-        transform: rotate(360deg);
-    }
-}
-</style>
-<<script>
-  function createStars() {
-  const container = document.querySelector("body");
-  for (let i = 0; i < 1000; i++) {
-    const star = document.createElement("div");
-    star.className = "star";
-    star.style.width = ".1px";
-    star.style.height = ".1px";
-    star.style.top = Math.random() * 100 + "%";
-    star.style.left = Math.random() * 100 + "%";
-    container.appendChild(star);
   }
-}
-createStars();
-</script>
+  .planeta {
+    position: absolute;
+    border-radius: 50%;
+    background-color: grey;
+  }
+  #mercurio { width: 10px; height: 10px; top: 50px; left: 40px; }
+  #venus { width: 15px; height: 15px; top: 70px; left: 80px; }
+  #terra { width: 15px; height: 15px; top: 90px; left: 130px; }
+  #marte { width: 12px; height: 12px; top: 120px; left: 180px; }
+  #jupiter { width: 40px; height: 40px; top: 180px; left: 260px; }
+  #saturno { width: 35px; height: 35px; top: 240px; left: 370px; }
+  #urano { width: 25px; height: 25px; top: 330px; left: 470px; }
+  #netuno { width: 25px; height: 25px; top: 420px; left: 560px; }
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="sun">
-      <img src="./images (1) (10).jpeg" alt="sun">
-    </div>
-    <div class="mercury"></div>
-    <div class="venus"></div>
-    <div class="earth">
-      <div class="moon"></div>
-    </div>
-    <div class="mars"></div>
-    <div class="jupiter"></div>
-    <div class="saturn"></div>
-    <div class="uranus"></div>
-    <div class="neptune"></div>
-    <div class="pluto">
-    </div>
-  </div>
-  <script src="script.js"></script>
+
+<div id="sol">
+  <a href="informacoes_planetas.html" target="_blank">
+    <img src="sol.png" alt="Sol" style="width: 100px; height: 100px;">
+  </a>
+  <div class="planeta" id="mercurio"></div>
+  <div class="planeta" id="venus"></div>
+  <div class="planeta" id="terra"></div>
+  <div class="planeta" id="marte"></div>
+  <div class="planeta" id="jupiter"></div>
+  <div class="planeta" id="saturno"></div>
+  <div class="planeta" id="urano"></div>
+  <div class="planeta" id="netuno"></div>
+</div>
+
 </body>
-  
 </html>
