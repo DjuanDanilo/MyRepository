@@ -1,30 +1,47 @@
-class Planeta {
-  constructor(nome, massa, diametro, distanciaDoSol) {
-    this.nome = nome;
-    this.massa = massa; // em kg
-    this.diametro = diametro; // em km
-    this.distanciaDoSol = distanciaDoSol; // em km
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema Solar</title>
+<style>
+  #sol {
+    background-color: yellow;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: relative;
   }
-}
+  .planeta {
+    position: absolute;
+    border-radius: 50%;
+    background-color: grey;
+  }
+  #mercurio { width: 10px; height: 10px; top: 50px; left: 40px; }
+  #venus { width: 15px; height: 15px; top: 70px; left: 80px; }
+  #terra { width: 15px; height: 15px; top: 90px; left: 130px; }
+  #marte { width: 12px; height: 12px; top: 120px; left: 180px; }
+  #jupiter { width: 40px; height: 40px; top: 180px; left: 260px; }
+  #saturno { width: 35px; height: 35px; top: 240px; left: 370px; }
+  #urano { width: 25px; height: 25px; top: 330px; left: 470px; }
+  #netuno { width: 25px; height: 25px; top: 420px; left: 560px; }
+</style>
+</head>
+<body>
 
-const sol = new Planeta("Sol", 1.989 * Math.pow(10,30), 1392684, 0);
+<div id="sol">
+  <a href="informacoes_planetas.html" target="_blank">
+    <img src="sol.png" alt="Sol" style="width: 100px; height: 100px;">
+  </a>
+  <div class="planeta" id="mercurio"></div>
+  <div class="planeta" id="venus"></div>
+  <div class="planeta" id="terra"></div>
+  <div class="planeta" id="marte"></div>
+  <div class="planeta" id="jupiter"></div>
+  <div class="planeta" id="saturno"></div>
+  <div class="planeta" id="urano"></div>
+  <div class="planeta" id="netuno"></div>
+</div>
 
-const mercurio = new Planeta("Mercúrio", 3.285 * Math.pow(10,23), 4879, 57900000);
-const venus = new Planeta("Vênus", 4.867 * Math.pow(10,24), 12104, 108000000);
-const terra = new Planeta("Terra", 5.972 * Math.pow(10,24), 12742, 149600000);
-const marte = new Planeta("Marte", 6.39 * Math.pow(10,23), 6779, 227900000);
-const jupiter = new Planeta("Júpiter", 1.898 * Math.pow(10,27), 139820, 778500000);
-const saturno = new Planeta("Saturno", 5.683 * Math.pow(10,26), 116460, 1433000000);
-const urano = new Planeta("Urano", 8.681 * Math.pow(10,25), 50724, 2877000000);
-const netuno = new Planeta("Netuno", 1.024 * Math.pow(10,26), 49244, 4503000000);
-
-const sistemaSolar = [sol, mercurio, venus, terra, marte, jupiter, saturno, urano, netuno];
-
-// Exibindo informações sobre cada planeta
-sistemaSolar.forEach(planeta => {
-  console.log(Planeta: ${planeta.nome});
-  console.log(Massa: ${planeta.massa} kg);
-  console.log(Diâmetro: ${planeta.diametro} km);
-  console.log(Distância do Sol: ${planeta.distanciaDoSol} km);
-  console.log("------------------------------------");
-});
+</body>
+</html>
