@@ -1,90 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      height: 100vh;
-      background-color: black;
-      margin: 0;
-    }
-
-    .planet {
-      position: relative;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #3498db; /* Planet color */
-      cursor: pointer;
-    }
-
-    #sun {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: yellow;
-    }
-
-    a {
-      display: block;
-      text-align: center;
-      color: bl;
-      text-decoration: none;
-      margin-top: 10px;
-    }
-  </style>
   <title>Sistema Solar</title>
 </head>
 <body>
-
-  <div class="planet" id="sun"></div>
-
-  <div class="planet" onclick="goToPlanet('Mercury')"></div>
-  <div class="planet" onclick="goToPlanet('Venus')"></div>
-  <div class="planet" onclick="goToPlanet('Earth')"></div>
-  <div class="planet" onclick="goToPlanet('Mars')"></div>
-  <div class="planet" onclick="goToPlanet('Jupiter')"></div>
-  <div class="planet" onclick="goToPlanet('Saturn')"></div>
-  <div class="planet" onclick="goToPlanet('Uranus')"></div>
-  <div class="planet" onclick="goToPlanet('Neptune')"></div>
-
-  <a href="#" id="planetLink" onclick="goToPlanet('Sol')"></a>
-
+  <canvas id="sistemaSolarCanvas" width="800" height="600"></canvas>
   <script>
-    function goToPlanet(planet) {
-      var planetLink = document.getElementById('planetLink');
-      planetLink.innerText = planet;
+    // Obtenha o elemento canvas e seu contexto
+    var canvas = document.getElementById("sistemaSolarCanvas");
+    var ctx = canvas.getContext("2d");
 
-      switch (planet) {
-        case 'Mercury':
-          window.location.href = 'link_mercury';
-          break;
-        case 'Venus':
-          window.location.href = 'link_venus';
-          break;
-        case 'Earth':
-          window.location.href = 'link_venus';
-          break;
-        case 'Mars':
-          window.location.href = 'link_venus';
-          break;
-        case 'Jupiter':
-          window.location.href = 'link_venus';
-          break;
-        case 'Saturn':
-          window.location.href = 'link_venus';
-          break;
-        case 'Uranus':
-          window.location.href = 'link_venus';
-          break;
-        case 'Neptune':
-          window.location.href = 'link_venus';
-          break;
+    // Defina as cores dos planetas
+    var planetColors = {
+      "Sun": "yellow",
+      "Mercury": "gray",
+      "Venus": "orange",
+      "Earth": "blue",
+      "Mars": "red",
+      "Jupiter": "brown",
+      "Saturn": "tan",
+      "Uranus": "lightblue",
+      "Neptune": "blue",
+    };
+
+    // Defina as posições dos planetas
+    var planetPositions = {
+      "Sun": { x: 400, y: 300 },
+      "Mercury": { x: 300, y: 300 },
+      "Venus": { x: 250, y: 300 },
+      "Earth": { x: 200, y: 300 },
+      "Mars": { x: 150, y: 300 },
+      "Jupiter": { x: 100, y: 300 },
+      "Saturn": { x: 50, y: 300 },
+      "Uranus": { x: 20, y: 300 },
+      "Neptune": { x: 10, y: 300 },
+    };
+
+    // Desenhe os planetas
+    for (var planet in planetColors) {
+      ctx.beginPath();
+      ctx.arc(planetPositions[planet].x, planetPositions[planet].y, 20, 0, Math.PI * 2);
+      ctx.fillStyle = planetColors[planet];
+      ctx.fill();
+      ctx.closePath();
+
+      // Adicione o nome do planeta
+      ctx.fillStyle = "white";
+      ctx.font = "bold 12px Arial";
+      ctx.fillText(planet, planetPositions[planet].x - 20, planetPositions[planet].y + 30);
+    }
+
+    // Adicione um link no sol para um site com informações sobre o sistema solar
+    ctx.beginPath();
+    ctx.arc(planetPositions["Sun"].x, planetPositions["Sun"].y, 30, 0, Math.PI * 2);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+    ctx.closePath();
+    ctx.fillStyle = "black";
+    ctx.font = "bold 16px Arial";
+    ctx.fillText("☀️", planetPositions["Sun"].x - 10, planetPositions["Sun"].y + 5);
+    canvas.addEventListener("click", function(event) {
+      var x = event.pageX - canvas.offsetLeft;
+      var y = event.pageY - canvas.offsetTop;
+      if (Math.sqrt((x - planetPositions["Sun"].x) * 2 + (y - planetPositions["Sun"].y) * 2) <= 30) {
+        window.location.href = "https://solarsystem.nasa.gov/";
       }
+    });
+
+  </script>
+</body>
+</html>
     }
   </script>
 
