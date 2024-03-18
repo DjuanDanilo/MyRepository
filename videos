@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animes e Filmes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .column {
+            position: relative;
+            width: 30%;
+            margin: 15px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .column:hover {
+            transform: translateY(-5px);
+        }
+
+        .column img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .column .thumbnail {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .column .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .column video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .column .description {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .expanded-image-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .expanded-image {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Animes e Filmes</h1>
+
+    <div class="container">
+        <div class="column" onclick="toggleExpandedImage('/img/wp11166251.jpg')">
+            <div class="thumbnail">
+                <img src="/img/wp11166251.jpg" alt="Imagem 1">
+            </div>
+            <video controls>
+                <source src="/mp4/399b282fd4ebb988d9bcc15fbbb7eb1f.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="description">
+                <p>No conceituado anime, o adolescente Yuuji Itadori participa de um clube de ocultismo e acaba se envolvendo com um item perigoso, um dedo amaldiçoado.</p>
+            </div>
+        </div>
+        <div class="column" onclick="toggleExpandedImage('/img/921377dd35cd53691399ebab027e0213.jpg')">
+            <div class="thumbnail">
+                <img src="/img/921377dd35cd53691399ebab027e0213.jpg" alt="Imagem 1">
+            </div>
+            <video controls>
+                <source src="/mp4/dd1eafff0a739fe29d510586a1d944db.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="description">
+                <p>No conceituado anime, o adolescente Yuuji Itadori participa de um clube de ocultismo e acaba se envolvendo com um item perigoso, um dedo amaldiçoado.</p>
+            </div>
+        </div>
+        <div class="column" onclick="toggleExpandedImage('/img/desktop-wallpaper-solo-leveling-live-solo-leveling-arise.jpg')">
+            <div class="thumbnail">
+                <img src="/img/desktop-wallpaper-solo-leveling-live-solo-leveling-arise.jpg" alt="Imagem 1">
+            </div>
+            <video controls>
+                <source src="/mp4/milesamv_e5a3c647456b4aed81d58095b28bff60.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="description">
+                <p>No conceituado anime, o adolescente Yuuji Itadori participa de um clube de ocultismo e acaba se envolvendo com um item perigoso, um dedo amaldiçoado.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="expanded-image-container" onclick="toggleExpandedImage()">
+        <img id="expandedImage" class="expanded-image">
+    </div>
+
+    <script>
+        function toggleExpandedImage(src) {
+            const expandedImageContainer = document.querySelector('.expanded-image-container');
+            const expandedImage = document.getElementById('expandedImage');
+            
+            if (expandedImageContainer.style.display === 'none' || expandedImageContainer.style.display === '') {
+                expandedImage.src = src;
+                expandedImageContainer.style.display = 'flex';
+            } else {
+                expandedImageContainer.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
