@@ -1,37 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
+v<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
-    <style>
-        body {
-            background-image:url(./img/fcccf8d879c1907ada042d531743150f.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        button {
-            background-color: indianred;
-            color: black;
-            padding: 2,5px 5px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            border: 1px solid black;
-        }
-    </style>
+    <title>Document</title>
 </head>
+<style>
+    body{
+        background-color: #101026;
+        display: flex;
+        align-items: center;
+        min-height: center;
+    }
+    h1{
+        color: blueviolet;
+        text-align-last: center;
+    }
+    form h4{
+        color: blueviolet;
+        text-align-last: center;
+    }
+    form{
+        color: blueviolet;
+        background-color: #1d1d2e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 10px 45px;
+        width: 500px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3)
+0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+    b{
+        color: blueviolet;
+    }
+    a{
+        color: blueviolet;
+    }
+    coment{
+        background-color: black;
+    }
+    form label{
+        font-size: 10px;
+        margin-bottom: 4px;
+        color: rgb(253, 251, 255);
+    }
+    form input{
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #220484;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        font-size: 10px;
+        transition: all 0.5s;
+    }
+    form input:focus{
+        border-radius: 16px;
+        font-size: 8px;
+    }
+    form button{
+        width: 100%;
+        cursor: pointer;
+        padding: 10px;
+        background: transparent;
+        margin: 8px 0;
+        border: 2px solid #ffffff;
+        color: #ffffff;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        font-size: 10px;
+        transition: all 1s;
+    }
+    form button:haver{
+        background: #1d1d2e;
+        color: #220484;
+        border-radius: 16px;
+    }
+</style>
 <body>
-    <a href="https://wa.me/19 99926-6509" target="_blank"><button>
-      <h3>Entrar em Contato</h3>
-    </button></a>
+    <h1>CONTATO</h1>
+    <form action="https://api.staticforms.xyz/submit" method="post">
+        <label for=""><b>digite seu nome:</b></label>
+        <input type="text" name="name" id="name" placeholder="digite
+seu nome." required>
+        <br><br>
+        <label for=""><b>digite seu email:</b></label>
+        <input type="email" name="email" id="email"
+placeholder="digite seu email." required>
+        <br><br>
+        <label for=""><b>digite sua senha:</b></label>
+        <input type="password" name="senha" id="senha"
+placeholder="digite sua senha." required>
+        <br><br>
+        <h4>qual sua profissão.</h4>
+        <input type="radio" name="profissao" id="professor" value="Professor">
+        <label for="professor">professor.</label>
+        <input type="radio" name="profissao" id="estudante" value="Estudante">
+        <label for="estudante">estudante.</label>
+        <input type="radio" name="profissao" id="vendedor" value="Vendedor">
+        <label for="vendedor">vendedor.</label>
+        <input type="radio" name="profissao" id="nada" value="Nada">
+        <label for="nada">em nada no momento.</label>
+        <br><br>
+        <h4>como você acessa a internet.</h4>
+        <input type="checkbox" id="celular" name="acessoInternet"
+value="Celular">
+        <label for="celular">celular.</label>
+        <input type="checkbox" id="notebook" name="acessoInternet"
+value="Notebook/PC">
+        <label for="notebook">notebok/pc.</label>
+        <input type="checkbox" id="semInternet" name="acessoInternet"
+value="Não possuo acesso a internet">
+        <label for="semInternet">não possuo acesso a internet.</label>
+        <br><br>
+        <label for="estado">estado</label>
+        <select id="estado" name="estado">
+            <option value="maranhao">ma</option>
+            <option value="rio de janeiro">rg</option>
+            <option value="acre">ac</option>
+        </select>
+        <br><br>
+        <textarea name="coment" id="coment" cols="30" rows="10"
+placeholder="coment" required></textarea>
+        <br><br>
+        <input type="reset" name="reset" id="reset" value="Reset">
+        <input type="submit" name="enviar" id="enviar" value="Enviar">
+
+        <input type="hidden" name="accessKey"
+value="d1cf4085-154b-413f-be78-6aadb7abc369">
+        <input type="hidden" name="redirectTo"
+value="https://kawakarlyndo.github.io/Meu.portifolio.kawa/contato.html">
+    </form>
 </body>
 </html>
